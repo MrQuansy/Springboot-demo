@@ -1,0 +1,28 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title> 学生信息查询 </title>
+</head>
+
+<body>
+
+<h2 >学生信息查询</h2>
+
+<form method="post">
+    <!--<form action="#" th:action="@{/add}" th:object="${student}" method="post">-->
+    <select name="attr" id="attr">
+        <option value ="Name">姓名</option>
+        <option value="Number">学号</option>
+        <option value="NativePlace">籍贯</option>
+        <option value="Department">院系</option>
+    </select>
+    <div class="form-group has-feedback">
+        <p>查询信息： <input type="text" name="val" id="val" placeholder="请输入信息"/></p>
+        <p><input type="submit"  value="Search" /> <input type="reset" value="Reset" /></p>
+    </div>
+</form>
+<br />
+<a href="/">返回首页</a>
+</body>
+</html>

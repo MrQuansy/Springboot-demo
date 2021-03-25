@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>学生信息</title>
+</head>
+<body>
+
+<h2>Student Information</h2>
+
+<table class="table table-striped" th:object="${student}">
+    <tr>
+        <th>学号</th>
+        <td><b th:text="*{Number}"></b></td>
+    </tr>
+    <tr>
+        <th>学生姓名</th>
+        <td><b th:text="*{Name}"></b></td>
+    </tr>
+    <tr>
+        <th>性别</th>
+        <td><b th:text="*{Gender}"></b></td>
+    </tr>
+    <tr>
+        <th>出生日期</th>
+        <td><b th:text="*{Birthdate}"></b></td>
+    </tr>
+    <tr>
+        <th>籍贯</th>
+        <td><b th:text="*{NativePlace}"></b></td>
+    </tr>
+    <tr>
+        <th>院系</th>
+        <td><b th:text="*{Department}"></b></td>
+    </tr>
+</table>
+
+<a th:href="@{/edit/__${student.Id}__}" class="btn btn-default">Edit</a>
+<a th:href="@{/delete/__${student.Id}__}" class="btn btn-default">Delete</a>
+<br />
+<a href="/">返回首页</a>
+<br />
+<br />
+<br />
+
+</body>
+
+</html>

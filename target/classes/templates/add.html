@@ -1,0 +1,28 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title> 填写学生信息 </title>
+</head>
+
+<body>
+
+<h2 th:if="${createorupdate}">添加学生信息</h2>
+<h2 th:if="${not createorupdate}">更新学生信息</h2>
+<form th:object="${student}" method="post">
+<!--<form action="#" th:action="@{/add}" th:object="${student}" method="post">-->
+    <div class="form-group has-feedback">
+        <p>姓名: <input type="text" th:field="*{Name}" /></p>
+        <p>性别: <input type="text" th:field="*{Gender}" /></p>
+        <p>生日: <input type="text" th:field="*{Birthdate}" /></p>
+        <p>籍贯: <input type="text" th:field="*{NativePlace}" /></p>
+        <p>院系: <input type="text" th:field="*{Department}" /></p>
+        <p>学号: <input type="text" th:field="*{Number}" /></p>
+
+        <p><input type="submit"  value="Submit" /> <input type="reset" value="Reset" /></p>
+    </div>
+</form>
+<br />
+<a href="/">返回首页</a>
+</body>
+</html>
